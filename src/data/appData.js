@@ -139,46 +139,11 @@ export const formulaOne = (
   </div>
 )
 
-export const fruits = [
-  {
-    name: 'Orange',
-    colour: 'bg-orange-500',
-    score: 10
-  },
-  {
-    name: 'Pineapple',
-    colour: 'bg-yellow-500',
-    score: 9
-  },
-  {
-    name: 'Mango',
-    colour: 'bg-orange-400', 
-    score: 8
-  },
-  {
-    name: 'Grape',
-    colour: 'bg-purple-600',
-    score: 7
-  },
+export const fruitsData = [  
   {
     name: 'Apple',
     colour: 'bg-red-500',
     score: 6
-  },
-  {
-    name: 'Banana',
-    colour: 'bg-yellow-400',
-    score: 5
-  },
-  {
-    name: 'Melon',
-    colour: 'bg-emerald-400', 
-    score: 4
-  },
-  {
-    name: 'Pear',
-    colour: 'bg-green-500',
-    score: 3
   },
   {
     name: 'Lemon',
@@ -186,8 +151,44 @@ export const fruits = [
     score: 2
   },
   {
+    name: 'Mango',
+    colour: 'bg-orange-400', 
+    score: 8
+  },
+  {
+    name: 'Peach',
+    colour: 'bg-orange-300', 
+    score: 4
+  },
+  
+  {
     name: 'Lime',
     colour: 'bg-lime-600',
     score: 1
-  }  
+  },  
+  {
+    name: 'Pineapple',
+    colour: 'bg-yellow-500',
+    score: 9
+  },
+  {
+    name: 'Pear',
+    colour: 'bg-green-500',
+    score: 3
+  },
+  {
+    name: 'Grape',
+    colour: 'bg-purple-600',
+    score: 7
+  },
+  {
+    name: 'Orange',
+    colour: 'bg-orange-500',
+    score: 10
+  },
+  {
+    name: 'Banana',
+    colour: 'bg-yellow-400',
+    score: 5
+  },    
 ]
