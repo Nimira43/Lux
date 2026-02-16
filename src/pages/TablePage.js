@@ -15,7 +15,12 @@ const config = [
   },
   {
     label: 'Score',
-    render: (fruit) => fruit.score
+    render: (fruit) => fruit.score,
+    header: () => (
+      <th className='bg-[#ff4500] text-white px-2 py-1 rounded-md font-medium'>
+        Score
+      </th>
+    )
   },
 ]
 
