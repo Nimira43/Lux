@@ -1,11 +1,12 @@
 import React from 'react'
-import Table from '../components/Table'
+import SortableTable from '../components/SortableTable'
 import { fruitsData } from '../data/appData'
 
 const config = [
   {
     label: 'Name',
-    render: (fruit) => fruit.name
+    render: (fruit) => fruit.name,
+    sortValue: (fruit) => fruit.name
   },
   {
     label: 'Colour',
@@ -16,11 +17,7 @@ const config = [
   {
     label: 'Score',
     render: (fruit) => fruit.score,
-    header: () => (
-      <th className='bg-[#ff4500] text-white px-2 py-1 rounded-md font-medium'>
-        Score
-      </th>
-    )
+    sortValue: (fruit) => fruit.score
   },
 ]
 
@@ -31,7 +28,7 @@ const keyFn = (fruit) => {
 function TablePage() { 
   return (
     <div>
-      <Table
+      <SortableTable
         data={fruitsData }
         config={config}
         keyFn={keyFn}
