@@ -11,7 +11,9 @@ function Table({ data, config, keyFn }) {
     }
 
     return (
-      <th key={column.label}>
+      <th 
+        className='text-lg font-medium uppercase'
+        key={column.label}>
         {column.label}
       </th>
     )
@@ -22,7 +24,7 @@ function Table({ data, config, keyFn }) {
       return (
         <td
           key={column.label}
-          className='p-2'
+          className='p-2 text-center'
         >
           {column.render(rowData)}
         </td>

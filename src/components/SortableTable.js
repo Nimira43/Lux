@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Table from './Table'
+import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai'
 
 function SortableTable(props) {
   const [sortOrder, setSortOrder] = useState(null)
@@ -7,6 +8,12 @@ function SortableTable(props) {
   const { config, data } = props
 
   const handleClick = (label) => {
+    if (sortBy && label !== sortBy) {
+      setSortOrder('asc')
+      setSortBy(label)
+      return
+    }
+
     if (sortOrder === null) {
       setSortOrder('asc')
       setSortBy(label)
@@ -27,8 +34,14 @@ function SortableTable(props) {
     return {
       ...column,
       header: () => (
-        <th onClick={() => handleClick(column.label)}>
-          {column.label} is sortable
+        <th 
+          className='cursor-pointer hover:text-prime transitioning'
+          onClick={() => handleClick(column.label)}
+        >
+          <div className='flex items-center gap-1 px-5'>
+            {getIcons(column.label, sortBy, sortOrder)}
+            <span className='text-lg font-medium uppercase'>{column.label}</span>    
+          </div>
         </th>
       )
     }
@@ -51,7 +64,6 @@ function SortableTable(props) {
     })
   }
 
-
   return (
     <Table
       {...props}
@@ -60,5 +72,38 @@ function SortableTable(props) {
     />
   )
 }
+
+function getIcons(label, sortBy, sortOrder) {
+  if (label !== sortBy) {
+    return (
+      <div>
+        <AiOutlineCaretUp />
+        <AiOutlineCaretDown />
+      </div>
+    )
+  }
+
+  if (sortOrder === null) {
+    return (
+      <div>
+        <AiOutlineCaretUp />
+        <AiOutlineCaretDown />
+      </div>
+    )
+  } else if (sortOrder === 'asc') {
+    return (
+      <div>
+        <AiOutlineCaretUp />
+      </div>
+    )
+  } else if (sortOrder === 'desc') {
+    return (
+      <div>
+        <AiOutlineCaretDown />
+      </div>
+    )
+  }
+}
+
 
 export default SortableTable
